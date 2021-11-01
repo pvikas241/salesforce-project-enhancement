@@ -1,0 +1,51 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+parameters:
+  - name: select one
+    displayName: select one
+    type: string
+    values:
+    - Create scratch org
+    - Create password of scratch org
+    - Push code to Scratch org
+    - Create 2GP package
+    - Install a package
+  - name: Scratch_Org_Name
+    displayName: Enter Scratch_Org_Name
+    type: string
+  - name: Scratch_Org_Username
+    displayName: Enter Scratch_Org_Username
+    type: string
+  - name: Scratch_Org_Username1
+    displayName: Enter Scratch_Org_Username1
+    type: string
+  - name: Scratch_Org_Username2
+    displayName: Enter Scratch_Org_Username2
+    type: string    
+  - name: Scratch_Org_Username3
+    displayName: Enter Scratch_Org_Username3
+    type: string    
+  - name: Package_Name
+    displayName: Enter Package_Name
+    type: string
+  - name: Package_ID
+    displayName: Enter Package_ID
+    type: string
+
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
